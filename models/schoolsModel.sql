@@ -9,7 +9,7 @@ CREATE TABLE schools (
     city VARCHAR(50) NOT NULL,
     state VARCHAR(50) NOT NULL,
     contact VARCHAR(15) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
     image_url VARCHAR(255),
+    email VARCHAR(100) UNIQUE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )

@@ -11,10 +11,6 @@ const createList = async (req, res) => {
         email,
     } = req.body;
 
-    if (!name || !email || contact) {
-        return res.status(400).json({ message: "Required fields missing" });
-    }
-
     const sql = `INSERT INTO schools (name, address, city, state,contact, image_url, email)
     VALUES (?,?,?,?,?,?,?)`;
 
