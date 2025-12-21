@@ -11,7 +11,7 @@ const schoolRouter = require('./routes/schoolRouter')
 
 app.use('/api', schoolRouter);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.DB_PORT || 5000;
 
 app.get('/', (req, res) => {
     res.send(`School Management API Running on port ${PORT}`);
