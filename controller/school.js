@@ -7,15 +7,15 @@ const createList = async (req, res) => {
         city,
         state,
         contact,
+        image_url,
         email,
     } = req.body;
-    const image_url = req.file.filename;
 
     if (!name || !email || contact) {
         return res.status(400).json({ message: "Required fields missing" });
     }
 
-    const sql = `INSERT INTO schools (name, address, city, state,contact, image, email_id)
+    const sql = `INSERT INTO schools (name, address, city, state,contact, image_url, email)
     VALUES (?,?,?,?,?,?,?)`;
 
     dbConnect.query(sql, [name, address, city, state, contact, image_url, email],
