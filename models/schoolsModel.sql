@@ -1,0 +1,15 @@
+CREATE DATABASE school_db;
+
+USE school_db;
+
+CREATE TABLE schools (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    address TEXT NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    state VARCHAR(50) NOT NULL,
+    contact VARCHAR(15) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    image_url VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
