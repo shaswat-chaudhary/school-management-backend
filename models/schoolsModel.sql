@@ -1,6 +1,6 @@
-CREATE DATABASE school_db;
+CREATE DATABASE school;
 
-USE school_db;
+USE school;
 
 CREATE TABLE schools (
     id INT AUTO_INCREMENT PRIMARY KEY,
