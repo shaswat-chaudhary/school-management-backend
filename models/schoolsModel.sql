@@ -1,10 +1,8 @@
-CREATE DATABASE user;
+USE railway;
 
-USE user;
-
-CREATE TABLE user (
+CREATE TABLE IF NOT EXISTS schools (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
+    school_name VARCHAR(100) NOT NULL,
     address TEXT NOT NULL,
     city VARCHAR(50) NOT NULL,
     state VARCHAR(50) NOT NULL,
@@ -12,4 +10,5 @@ CREATE TABLE user (
     image_url VARCHAR(255),
     email VARCHAR(100) UNIQUE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
+

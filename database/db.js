@@ -16,4 +16,8 @@ dbConnect.connect((err) => {
     console.log("MySQL connected successfully");
 });
 
+dbConnect.query("SELECT DATABASE() AS db", (err, result) => {
+  console.log("Connected DB:", result.dbConnect);
+});
+
 module.exports = dbConnect;
