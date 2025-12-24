@@ -2,7 +2,7 @@ CREATE DATABASE school;
 
 USE school;
 
-CREATE TABLE schools (
+CREATE TABLE user (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     address TEXT NOT NULL,
