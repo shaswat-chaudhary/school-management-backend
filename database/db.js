@@ -10,19 +10,12 @@ const db = mysql.createConnection({
 
 db.connect((err) => {
   if (err) {
-    console.error("❌ DB CONNECTION FAILED");
-    console.error(err);
+    console.error("Database connection failed:", err);
     return;
   }
-
-  db.query("SELECT DATABASE() AS db", (err, res) => {
-    console.log("👉 Connected DB:", res?.[0]?.db);
-  });
-
-  db.query("SHOW TABLES", (err, res) => {
-    console.log("👉 Tables:", res);
-  });
+  console.log("Database connected successfully");
 });
+
 
 module.exports = db;
 
