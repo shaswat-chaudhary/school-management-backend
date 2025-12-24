@@ -1,6 +1,6 @@
-CREATE DATABASE school;
+CREATE DATABASE user;
 
-USE school;
+USE user;
 
 CREATE TABLE user (
     id INT AUTO_INCREMENT PRIMARY KEY,
