@@ -1,23 +1,28 @@
-const mysql = require('mysql2');
+const mysql = require("mysql2");
 
-const dbConnect = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
 });
 
-dbConnect.connect((err) => {
-    if (err) {
-        console.error("Database connection failed:", err);
-        return;
-    }
-    console.log("MySQL connected successfully");
+db.connect((err) => {
+  if (err) {
+    console.error("❌ DB CONNECTION FAILED");
+    console.error(err);
+    return;
+  }
+
+  db.query("SELECT DATABASE() AS db", (err, res) => {
+    console.log("👉 Connected DB:", res?.[0]?.db);
+  });
+
+  db.query("SHOW TABLES", (err, res) => {
+    console.log("👉 Tables:", res);
+  });
 });
 
-dbConnect.query("SELECT DATABASE() AS db", (err, result) => {
-  console.log("Connected DB:", result.dbConnect);
-});
+module.exports = db;
 
-module.exports = dbConnect;
