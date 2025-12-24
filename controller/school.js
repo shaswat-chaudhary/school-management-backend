@@ -7,14 +7,14 @@ const createList = async (req, res) => {
         city,
         state,
         contact,
-        image_url,
+        image,
         email,
     } = req.body;
 
-    const sql = `INSERT INTO schools (name, address, city, state,contact, image_url, email)
+    const sql = `INSERT INTO schools (name, address, city, state,contact, image, email)
     VALUES (?,?,?,?,?,?,?)`;
 
-    dbConnect.query(sql, [name, address, city, state, contact, image_url, email],
+    dbConnect.query(sql, [name, address, city, state, contact, image, email],
         (err) => {
             if (err) {
                 return res.status(500).json({ error: err.message });
